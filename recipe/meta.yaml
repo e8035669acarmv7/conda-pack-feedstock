@@ -1,13 +1,13 @@
 {% set name = "conda-pack" %}
-{% set version = "0.4.0" %}
-{% set sha256 = "70bf587cacfabd93d2ec4f3eda3e50e2661e7f92e994879ca1e2d61a8f9a225f" %}
+{% set version = "0.5.0" %}
+{% set sha256 = "7a55c0f190fece0afdd48e5f931cee7b81050ab319b720c2fd70d15594709fa6" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/conda/{{ name }}/archive/{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -47,3 +47,4 @@ about:
 extra:
   recipe-maintainers:
     - jcrist
+    - mcg1969
