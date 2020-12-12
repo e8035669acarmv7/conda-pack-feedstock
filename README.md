@@ -5,9 +5,13 @@ Home: https://conda.github.io/conda-pack/
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/conda-pack-feedstock/blob/master/LICENSE.txt)
 
 Summary: Package conda environments for redistribution
+
+Development: https://github.com/conda/conda-pack
+
+Documentation: https://conda.github.io/conda-pack/
 
 ``conda-pack`` is a command line tool for creating relocatable conda
 environments. This is useful for deploying code in a consistent environment,
