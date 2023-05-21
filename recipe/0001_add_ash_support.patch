@@ -1,0 +1,24 @@
+diff --git a/conda_pack/scripts/posix/activate b/conda_pack/scripts/posix/activate
+index c655a98..1a6bb85 100644
+--- a/conda_pack/scripts/posix/activate
++++ b/conda_pack/scripts/posix/activate
+@@ -14,8 +14,9 @@ _conda_pack_activate() {
+         if [ "$_q" = dash ]; then
+             _CONDA_SHELL_FLAVOR=dash
+         else
+-            (>&2 echo "Unrecognized shell.")
+-            return 1
++            # (>&2 echo "Unrecognized shell.")
++            # return 1
++            _CONDA_SHELL_FLAVOR=ash
+         fi
+     fi
+ 
+@@ -25,6 +26,7 @@ _conda_pack_activate() {
+         bash) script_dir="$(dirname "${BASH_SOURCE[0]}")";;
+         zsh) script_dir="$(dirname "${(%):-%x}")";;  # http://stackoverflow.com/a/28336473/2127762
+         dash) x=$(lsof -p $$ -Fn0 | tail -1); script_dir="$(dirname "${x#*n}")";;
++        ash) x=$(lsof | grep '^'$$ | tail -n1 | awk '{print $3}'); script_dir="$(dirname "${x}")";;
+         *) script_dir="$(cd "$(dirname "$_")" && echo "$PWD")";;
+     esac
+ 
