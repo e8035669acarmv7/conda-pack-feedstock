@@ -1,6 +1,5 @@
 {% set name = "conda-pack" %}
-{% set version = "0.7.0" %}
-{% set sha256 = "cac32975588095d5eefdf34bec48b22f2c33d304e12f24076952da96b1133b5f" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: df820a9d358e9ef04dffb261af7e4c4256f9c6a034af65350a9fe1e1fb2e2c36
 
 build:
   number: 0
@@ -19,15 +18,18 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.7
     - pip
   run:
     - setuptools
-    - python >=3.6
+    - python >=3.7
 
 test:
   commands:
     - conda-pack --help
+    - pip check
+  requires:
+    - pip
   imports:
     - conda_pack
 
@@ -49,3 +51,4 @@ extra:
     - jcrist
     - mcg1969
     - dbast
+    - xhochy
