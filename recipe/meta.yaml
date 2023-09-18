@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: df820a9d358e9ef04dffb261af7e4c4256f9c6a034af65350a9fe1e1fb2e2c36
+  sha256: 8246a837e9baba6d5b3052503b5d40fde6a9f09bbbe5a768e678593ac371921f
   patches:
     - 0001_add_ash_support.patch
 
