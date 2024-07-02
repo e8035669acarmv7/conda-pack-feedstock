@@ -1,5 +1,5 @@
 {% set name = "conda-pack" %}
-{% set version = "0.7.1" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/conda/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 8246a837e9baba6d5b3052503b5d40fde6a9f09bbbe5a768e678593ac371921f
+  sha256: 3ffdf49d35a3e3cab7c2e0f3fb958d82f68a8a50267348cffb9a61aee7fb624d
   patches:
     - 0001_add_ash_support.patch
 
