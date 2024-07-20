@@ -12,7 +12,7 @@ source:
     - 0001_add_ash_support.patch
 
 build:
-  number: 0
+  number: 100
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
